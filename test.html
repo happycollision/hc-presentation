@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  p { color:blue; width:200px; font-size:14px; }
+  </style>
+  <script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+  
+  <h2>Just roll the mouse over me.</h2>
+
+  <p>Or me to see a color change.</p>
+  
+<script>
+  $("h2").mouseover(function () {
+    $(this).css("color","red");
+  });
+  
+  var array = new Array('mouse','cat','dog','elephant');
+	document.write(array.toString());
+	
+	array.push(array.shift());
+	document.write('<br>' + array.toString());
+	
+	//document.write('<br>' + array[]);
+</script>
+
+</body>
+</html>

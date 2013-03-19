@@ -1,0 +1,150 @@
+<!doctype html><html><head><title>Slider testing</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jqueryui.js"></script>
+
+<style>
+.stage{
+	width:800px;
+	height:100px;
+	margin:auto;
+	border:5px solid #333;
+	background:#dfdfdf;
+	position:relative;
+	overflow:hidden;
+}
+.stage .stage{
+	width: 100%;
+	height:100px;
+	border:none;
+}
+.wings .scene{
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+}
+.scene, .curtain{
+	width:100%;
+	height:80px;
+	background-color:#dfdfdf;
+	//border:2px solid blue;
+}
+.wings .current.scene, .curtain.current{
+	color:green;
+	display:block;
+}
+.program .current{
+	color:green;
+}
+.stage .previous{
+	color:red;
+}
+.stage .next{
+	color:yellow
+}
+.stage .stage{
+	color:black;
+}
+</style>
+</head>
+
+<body>
+<div class="happycol_presentation hcp1"><!-- Unique ID in this class -->
+	<div class="stage">
+		<div class="curtain">
+			<h2>Hello.  I am a curtain.<a href="#">link</a></h2>
+		</div><!--curtain-->
+
+		<span class="wings">
+			<div class="scene">
+				<h2>I'm scene 1.</h2>
+			</div><!--scene-->
+			<div class="scene">
+				<h2>I'm scene 2.</h2>
+			</div><!--scene-->
+			<div class="scene">
+				<div class="happycol_presentation hcp2">
+					<div class="stage">
+						<span class="wings">
+							<div class="scene">
+								Nested
+							</div>
+							<div class="scene">
+								Slide
+							</div>
+							<div class="scene">
+								Show
+							</div>
+						</span>
+					</div>	
+				</div>
+			</div><!--scene-->
+			<div class="scene">
+				<h2>I'm scene 4.</h2>
+			</div><!--scene-->
+			<div class="scene">
+				<h2>I'm scene 5.</h2>
+			</div><!--scene-->
+		</span><!--wings-->
+	</div><!--stage-->
+</div><!--happycol_presentation">-->
+
+
+
+<!--<div class="program hcp1">
+	<div class="listing">
+		I list 1.
+	</div>
+	<div class="listing">
+		I list 2.
+	</div>
+	<div class="listing">
+		I list 3.
+	</div>
+	<div class="listing">
+		I list 4.
+	</div>
+	<div class="listing">
+		I list 5.
+	</div>
+	<div class="play">
+		Play
+	</div>
+	<div class="stop">
+		Stop
+	</div>
+</div>-->
+
+
+<script type="text/javascript" src="happycol_presentation.js"></script>
+<script type="text/javascript">
+	/*  */
+	happycol_presentation_init({
+			theatre:			'hcp1',		
+			//lightingDesigner:	true,
+			//intermission:		true,
+			program:			'create',
+			techDirector:		true,
+			sceneChangeSpeed:	1000,
+			sceneChange:		'slide',
+			easing:				'easeOutBounce',
+			stageTime:			2,
+			//stageManager:		false,
+	});/* */
+	happycol_presentation_init({
+			theatre:			'hcp2',		
+			lightingDesigner:	false,
+			//intermission:		true,
+			program:			false,
+			techDirector:		false,
+			sceneChangeSpeed:	700,
+			stageTime:			0,
+			sceneChange:		'slide up',
+			easing:				'linear',
+			//stageManager:		false,
+	});/* */
+</script>
+
+
+</body>
+</html>
